@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý xe</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+  </head>
+  <body>
+    <header>
+      <h1>Quản lý nhân viên</h1>
+      <nav>
+        <ul>
+          <li><a th:href="@{/quanlyxe}">Quản lý xe</a></li>
+          <li><a th:href="@{/quanlynhanvien}">Quản lý nhân viên</a></li>
+          <li><a th:href="@{/quanlykhachhang}">Quản lý khách hàng</a></li>
+          <li><a th:href="@{/quanlyvexe}">Quản lý vé xe</a></li>
+        </ul>
+      </nav>
+      <div class="logout">
+        <a th:href="@{/login}" class="btn-logout">Thoát</a>
+      </div>
+    </header>
+
+    <main>
+      <h2>Danh sách nhân viên</h2>
+      <button onclick="showAddForm()">Thêm nhân viên mới</button>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Tên nhân viên</th>
+            <th>Số điện thoại</th>
+            <th>Chức vụ</th>
+            <th>Mã quản lí duyệt</th>
+          </tr>
+        </thead>
+        <tbody id="nhanvien-table-body">
+          <!-- Dữ liệu sẽ được hiển thị ở đây -->
+        </tbody>
+      </table>
+    </main>
+
+    <!-- Form Thêm/Sửa Nhân viên -->
+    <div id="nhanvien-form" class="form-container" style="display: none">
+      <h2 id="form-title">Thêm Nhân viên</h2>
+
+      <label>Tên Nhân viên:</label>
+      <input type="text" id="tennv" />
+
+      <label>Số điện thoại:</label>
+      <input type="text" id="sdt" />
+
+      <label>Chức vụ:</label>
+      <input type="text" id="chucvu" />
+
+      <label>Mã quản lí duyệt:</label>
+      <input type="text" id="maquanliduyet" />
+
+      <button onclick="saveNhanVien()">Lưu</button>
+      <button onclick="closeForm()">Hủy</button>
+    </div>
+
+    <script th:src="@{/js/nhanvien.js}"></script>
+  </body>
+</html>

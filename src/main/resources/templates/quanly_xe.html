@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý xe</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+  </head>
+  <body>
+    <header>
+      <h1>Quản lý xe</h1>
+      <nav>
+        <ul>
+          <li><a th:href="@{/quanlyxe}">Quản lý xe</a></li>
+          <li><a th:href="@{/quanlynhanvien}">Quản lý nhân viên</a></li>
+          <li><a th:href="@{/quanlykhachhang}">Quản lý khách hàng</a></li>
+          <li><a th:href="@{/quanlyvexe}">Quản lý vé xe</a></li>
+        </ul>
+      </nav>
+      <div class="logout">
+        <a th:href="@{/login}" class="btn-logout">Thoát</a>
+      </div>
+    </header>
+
+    <main>
+      <h2>Danh sách xe</h2>
+      <button onclick="showAddForm()">Thêm xe mới</button>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Biển số</th>
+            <th>Loại xe</th>
+            <th>Chủ xe</th>
+            <!-- <th>Hành động</th> -->
+          </tr>
+        </thead>
+        <tbody id="xe-table-body">
+          <!-- Dữ liệu sẽ được hiển thị ở đây -->
+        </tbody>
+      </table>
+    </main>
+
+    <!-- Form Thêm/Sửa Xe -->
+    <div id="xe-form" class="form-container" style="display: none">
+      <h2 id="form-title">Thêm Xe</h2>
+      <label>Biển số:</label>
+      <input type="text" id="biensoxe" />
+      <label>Loại xe:</label>
+      <input type="text" id="loaixe" />
+      <label>Chủ xe:</label>
+      <input type="text" id="chuxe" />
+      <button onclick="saveXe()">Lưu</button>
+      <button onclick="closeForm()">Hủy</button>
+    </div>
+
+    <script th:src="@{/js/xe.js}"></script>
+  </body>
+</html>

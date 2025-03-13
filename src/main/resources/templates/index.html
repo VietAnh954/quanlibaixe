@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lí bãi xe</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+      <h1>Hệ Thống Quản Lý Bãi Xe</h1>
+      <nav>
+        <ul>
+          <li><a th:href="@{/quanlyxe}">Quản lý xe</a></li>
+          <li><a th:href="@{/quanlynhanvien}">Quản lý nhân viên</a></li>
+          <li><a th:href="@{/quanlykhachhang}">Quản lý khách hàng</a></li>
+          <li><a th:href="@{/quanlyvexe}">Quản lý vé xe</a></li>
+        </ul>
+      </nav>
+      <div class="logout">
+        <a th:href="@{/login}" class="btn-logout">Thoát</a>
+      </div>
+    </header>
+
+    <!-- Nội dung chính -->
+    <main>
+      <h2>Chào mừng đến với hệ thống quản lý bãi xe</h2>
+      <p>Vui lòng chọn một mục từ menu để quản lý dữ liệu.</p>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Quản lý bãi xe. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

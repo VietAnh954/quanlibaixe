@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý xe</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+  </head>
+  <body>
+    <header>
+      <h1>Quản lý khách hàng</h1>
+      <nav>
+        <ul>
+          <li><a th:href="@{/quanlyxe}">Quản lý xe</a></li>
+          <li><a th:href="@{/quanlynhanvien}">Quản lý nhân viên</a></li>
+          <li><a th:href="@{/quanlykhachhang}">Quản lý khách hàng</a></li>
+          <li><a th:href="@{/quanlyvexe}">Quản lý vé xe</a></li>
+        </ul>
+      </nav>
+      <div class="logout">
+        <a th:href="@{/login}" class="btn-logout">Thoát</a>
+      </div>
+    </header>
+
+    <main>
+      <h2>Danh sách khách hàng</h2>
+      <button onclick="showAddForm()">Thêm khách hàng mới</button>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Tên khách hàng</th>
+            <th>Số điện thoại</th>
+            <th>Mã xe</th>
+            <th>Mã nhân viên duyệt</th>
+          </tr>
+        </thead>
+        <tbody id="khachhang-table-body">
+          <!-- Dữ liệu sẽ được hiển thị ở đây -->
+        </tbody>
+      </table>
+    </main>
+
+    <!-- Form Thêm/Sửa Khách Hàng  -->
+    <div id="khachhang-form" class="form-container" style="display: none">
+      <h2 id="form-title">Thêm Khách Hàng</h2>
+
+      <label>Tên Khách Hàng:</label>
+      <input type="text" id="tenkh" />
+
+      <label>Số điện thoại:</label>
+      <input type="text" id="sdt" />
+
+      <label>Mã Xe:</label>
+      <input type="text" id="maxe" />
+
+      <label>Mã nhân viên duyệt:</label>
+      <input type="text" id="manhanvienduyet" />
+
+      <button onclick="saveKhachHang()">Lưu</button>
+      <button onclick="closeForm()">Hủy</button>
+    </div>
+
+    <script th:src="@{/js/khachhang.js}"></script>
+  </body>
+</html>
