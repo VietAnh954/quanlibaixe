@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class LoginController {
 
-    // @GetMapping("/login")
-    // public String showLoginForm() {
-    //     return "login";
-    // }
+    @GetMapping("/login")
+    public String showLoginForm() {
+        return "login";
+    }
 
     @PostMapping("/login")
     public String login(@RequestParam String username, @RequestParam String password, Model model) {
